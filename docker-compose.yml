@@ -5,7 +5,7 @@ services:
     container_name: chatbot_jupyter_flask
     restart: always
     ports:
-      - "9527:8888"
+      - "8888:8888"
       - "80:5000"
     links:
       - redis_lins_jupyter
@@ -22,14 +22,14 @@ services:
       - chatbot_jupyter_flask
     restart: always
     ports:
-      - "54088:4040"
+      - "4040:4040"
     links:
       - chatbot_jupyter_flask:http
-    command: ngrok http --authtoken=32ZoeJorDdv89SQtmqi1X_6tcraKJQmPaKFD2G94kDn chatbot_jupyter_flask:5000
+    command: ngrok http --authtoken=upGfpT3EYQymmC9WbXHc_DWHNFxTmJTm4Ph1UEuDN chatbot_jupyter_flask:5000
 
   redis_lins_jupyter:
     image: redislabs/rejson
-    container_name: ec2-redis
+    container_name: -redis
     restart: always
     ports:
       - "6379:6379"
