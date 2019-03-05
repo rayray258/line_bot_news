@@ -11,7 +11,6 @@ services:
       - redis_lins_jupyter
     volumes:
       - ./material:/home/jovyan/work
-    command: start-notebook.sh --NotebookApp.token='howdoyouturnthison8888'
     environment:
       - "GRANT_SUDO: yes"
 
@@ -35,4 +34,3 @@ services:
       - "6379:6379"
     volumes:
       - ./redis_data:/data
-    command: redis-server --requirepass "howdoyouturnthison6379"
