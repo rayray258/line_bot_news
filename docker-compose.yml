@@ -11,6 +11,7 @@ services:
       - redis_lins_jupyter
     volumes:
       - ./material:/home/jovyan/work
+    command: start-notebook.sh --NotebookApp.token='linebot'
     environment:
       - "GRANT_SUDO: yes"
 
